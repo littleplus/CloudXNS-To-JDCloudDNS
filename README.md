@@ -2,6 +2,7 @@
 # 导出CloudXNS记录为京东云DNS格式csv导出文件
 
 ## 注意事项
+* Python 3.x
 * 懒，只做了单域名导出，也没必要导出所有域名
 * 目前支持且仅支持A(X)、CNAME(X)、MX、TXT、301/302跳转，不支持SRV及LINK记录，请自行寻找替代出路
 * 301/302跳转整合为显性(显式)301跳转
@@ -15,3 +16,6 @@
 4. 将导出的域名.csv文件在京东云DNS导入，选择京东云csv导出格式，选择京东云csv导出格式，选择京东云csv导出格式
 5. 右上角，批量导入
 6. 打完，收工
+
+## 鸣谢
+本脚本使用的CloudXNS Python SDK版本为：https://github.com/wevsty/CloudXNS_Python3_SDK ，官方版本只支持Python2。使用Python2的请自行安装官方Python SDK，然后修改代码导入。
