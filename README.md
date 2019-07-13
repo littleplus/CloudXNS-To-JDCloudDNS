@@ -1,2 +1,17 @@
 # CloudXNS-To-JDCloudDNS
-导出CloudXNS记录为京东云DNS格式
+# 导出CloudXNS记录为京东云DNS格式csv导出文件
+
+## 注意事项
+* 懒，只做了单域名导出，也没必要导出所有域名
+* 目前支持且仅支持A(X)、CNAME(X)、MX、TXT、301/302跳转，不支持SRV及LINK记录，请自行寻找替代出路
+* 301/302跳转整合为显性(显式)301跳转
+* 导出后记录分别记录到两个文件，一个是以域名为文件名的.csv格式，另一个带有disable-前缀的，以域名为文件名的.csv格式。前者是CloudXNS里面启用状态的域名，后者为禁用状态的域名，因为京东云DNS导入的时候不能导入状态。
+* 因为编码类型为utf-8（京东云DNS导入检查），所以windows下Excel、WPS等直接打开是乱码，请用notepad++打开
+
+## 食用方法
+1. 下载完整Git项目压缩包或者使用git clone命令下载
+2. 修改api_key、secret_key为你的CloudXNS的
+3. python start.py 域名
+4. 将导出的域名.csv文件在京东云DNS导入，选择京东云csv导出格式，选择京东云csv导出格式，选择京东云csv导出格式
+5. 右上角，批量导入
+6. 打完，收工
