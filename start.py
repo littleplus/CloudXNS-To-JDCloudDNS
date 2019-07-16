@@ -1,4 +1,4 @@
-#encoding=utf-8
+#coding=utf-8
 import csv,json,sys
 from capi import capi
 
